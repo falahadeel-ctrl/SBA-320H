@@ -21,10 +21,17 @@ const pokemon = useSelector(
 
     
   )
-  {pokemon.loading && <p>Loading...</p>}
-  {pokemon.error && <p>{pokemon.error}</p>}
-  {pokemon.data && <p>{pokemon.data.name}</p>}
-  
+  {pokemon.loading &&
+     <p>Loading...</p>}
+  {pokemon.error &&
+     <p>{pokemon.error}</p>}
+  {pokemon.data &&
+    <div>
+       <p>{pokemon.data.name}</p>
+        <img src={pokemon.data.sprites.front_default} />
+        </div>
+         }
+   
 }
 
 
