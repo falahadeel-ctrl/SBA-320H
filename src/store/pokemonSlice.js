@@ -1,9 +1,9 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'; //redux stores data temporrary on website(refresh removes data)
 
 export const fetchPokemon = createAsyncThunk(`pokemon/fetchPokemon`, async (name) => {  //feteching pokemon from api useing url
-    const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${name}`)
-    if(!response.ok){
-    throw new Error (`Pokemon not found`)
+    const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${name.toLowerCase()}`)
+    if(!response.ok){  //if response was succesful or not
+    throw new Error (`Pokemon not found`) //sets state error to pokemon not found 
     }
     const data = await response.json()
     return data
