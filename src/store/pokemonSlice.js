@@ -16,18 +16,20 @@ error: null
     reducers: {},
     extraReducers: (builder) =>{
         builder
-        .addCase(fetchPokemon.pending, (state)=> {
+        .addCase(fetchPokemon.pending, (state)=> { //state is our redux
        state.loading =true
        state.error = null
         })
-        .addCase(fetchPokemon.fulfilled, (state, action) =>{
-        action.payload.loading=false
-        action.payload.error= null
+        .addCase(fetchPokemon.fulfilled, (state, action) =>{ //action.payload is data comeing back from api
+        state.loading=false
+        state.data= action.payload   // data stored in state.data useing action.payload
         })
         .addCase(fetchPokemon.rejected, (state) =>{
-        action.payload.loading= false
-        action.payload.error= true
+        state.loading= false
+        state.error= 'not found'
         })
     }
 
 })
+
+export default pokemonSlice.reducer //pokemon is the whole slice object and we only need .redcuer part to grab specfic object
