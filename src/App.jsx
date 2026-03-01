@@ -14,7 +14,7 @@ const pokemon = useSelector(
     <>
     <h1>Pokemon searching</h1>
     <input type="text" placeholder="enter Pokemon name" value={pokemonName} onChange={(e)=> setPokemonName(e.target.value)}/>
-    <button type="button">triggers search</button>
+    <button type="button" onClick={() => dispatch(fetchPokemon(pokemonName))}>triggers search</button>
     </>
   )
 }
