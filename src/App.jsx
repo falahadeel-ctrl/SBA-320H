@@ -21,7 +21,10 @@ const pokemon = useSelector(
 
     
   )
-  pokemon
+  {pokemon.loading && <p>Loading...</p>}
+  {pokemon.error && <p>{pokemon.error}</p>}
+  {pokemon.data && <p>{pokemon.data.name}</p>}
+  
 }
 
 
