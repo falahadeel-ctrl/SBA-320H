@@ -12,9 +12,9 @@ const pokemon = useSelector(
   )
   return (
     <>
-    <h1>title</h1>
-    <input type="text">pokemon name</input>
-    <button>triggers search</button>
+    <h1>Pokemon searching</h1>
+    <input type="text" placeholder="enter Pokemon name" value={pokemonName} onChange={(e)=> setPokemonName(e.target.value)}/>
+    <button type="button">triggers search</button>
     </>
   )
 }
