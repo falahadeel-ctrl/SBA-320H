@@ -33,5 +33,6 @@ const pokemon = useSelector(
   )
   
 }
+export default App
 
 
